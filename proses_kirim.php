@@ -7,8 +7,9 @@ $message = htmlentities($_POST['message']);
 
 $pengirim = "From: ".$email.", name: ".$nama."\r\n";
 
-if (mail($admin, $subject, $message, $pengirim)) {
-    echo "<p class='fs-4 text-primary text-center'> pesan terkirim</p>";
-}else {
-    echo "<p class='fs-4 text-danger text-center'> pesan tidak terkirim <br> coba beberapa saat lagi </p>";
-}
+// if (mail($admin, $subject, $message, $pengirim)) {
+//     echo "<p class='fs-4 text-primary text-center'> pesan terkirim</p>";
+// }else {
+//     echo "<p class='fs-4 text-danger text-center'> pesan tidak terkirim <br> coba beberapa saat lagi </p>";
+// }
+ echo "<p class='fs-4 text-danger text-center'> pesan tidak terkirim <br> coba beberapa saat lagi </p>";
