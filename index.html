@@ -234,7 +234,8 @@
 					$('#msg').html(msg);
 				},
 				error: function (msg) {
-					alert('msg');
+					$('#modal').modal('show');
+					$('#msg').html(msg);
 				}
 			});
 		});
