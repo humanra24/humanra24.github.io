@@ -148,19 +148,19 @@
 				<div class="col-md-6">
 					<div class="mb-3">
 						<label for="name" class="form-label">Nama Lengkap</label>
-						<input type="text" class="form-control" name="name" id="name" aria-describedby="name" required="">
+						<input type="text" class="form-control" name="name" id="name" aria-describedby="name" />
 					</div>
 					<div class="mb-3">
 						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control" name="email" id="email" aria-describedby="email" required="">
+						<input type="email" class="form-control" name="email" id="email" aria-describedby="email" />
 					</div>
 					<div class="mb-3">
 						<label for="subject" class="form-label">Judul</label>
-						<input type="text" class="form-control" name="subject" id="subject" aria-describedby="subject" required="">
+						<input type="text" class="form-control" name="subject" id="subject" aria-describedby="subject" />
 					</div>
 					<div class="mb-3">
 						<label for="message" class="form-label">Pesan</label>
-						<textarea class="form-control" id="message" name="message" rows="3" required=""></textarea>
+						<textarea class="form-control" id="message" name="message" rows="3" /></textarea>
 					</div>
 					<button class="btn btn-primary" id="sent">Kirim</button>
 				</div>
@@ -218,26 +218,30 @@
 			// console.log(name);
 			// console.log(email);
 			// console.log(message);
-			$.ajax({
-				url: 'proses_kirim.php',
-				type: 'POST',
-				dataType: 'html',
-				data: {
+			if(name == "" || email == "" || subject== "" || message== ""){
+				$('#modal').modal('show');
+				$('#msg').html('inputan harus diisi semua');
+			    }else{
+				$.ajax({
+				    url: 'proses_kirim.php',
+				    type: 'POST',
+				    dataType: 'html',
+				    data: {
 					name: name,
 					email: email,
 					subject: subject,
 					message: message
-				},
-				cache: false,
-				success: function (msg) {
+				    },
+				    cache: false,
+				    success: function (msg) {
 					$('#modal').modal('show');
 					$('#msg').html(msg);
-				},
-				error: function (msg) {
-					$('#modal').modal('show');
-					$('#msg').html('mengirim pesan gagal, coba beberapa saat lagi');
-				}
-			});
+				    },
+				    error: function (msg) {
+					alert('msg');
+				    }
+				});
+			    }
 		});
 	</script>
 
