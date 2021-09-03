@@ -148,19 +148,19 @@
 				<div class="col-md-6">
 					<div class="mb-3">
 						<label for="name" class="form-label">Nama Lengkap</label>
-						<input type="text" class="form-control" name="name" id="name" aria-describedby="name">
+						<input type="text" class="form-control" name="name" id="name" aria-describedby="name" required>
 					</div>
 					<div class="mb-3">
 						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control" name="email" id="email" aria-describedby="email">
+						<input type="email" class="form-control" name="email" id="email" aria-describedby="email" required>
 					</div>
 					<div class="mb-3">
 						<label for="subject" class="form-label">Judul</label>
-						<input type="text" class="form-control" name="subject" id="subject" aria-describedby="subject">
+						<input type="text" class="form-control" name="subject" id="subject" aria-describedby="subject" required>
 					</div>
 					<div class="mb-3">
 						<label for="message" class="form-label">Pesan</label>
-						<textarea class="form-control" id="message" name="message" rows="3"></textarea>
+						<textarea class="form-control" id="message" name="message" rows="3" required></textarea>
 					</div>
 					<button class="btn btn-primary" id="sent">Kirim</button>
 				</div>
@@ -235,7 +235,7 @@
 				},
 				error: function (msg) {
 					$('#modal').modal('show');
-					$('#msg').html(msg);
+					$('#msg').html('mengirim pesan gagal, coba beberapa saat lagi');
 				}
 			});
 		});
